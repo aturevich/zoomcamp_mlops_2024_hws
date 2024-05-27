@@ -1,0 +1,15 @@
+artifact_uri: file:///home/user/projects/zoomcamp_mlops_2024_hws/mlruns/0/b859c4bff0844dafbe4e07e462dfdc13/artifacts
+end_time: 1716802893381
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b859c4bff0844dafbe4e07e462dfdc13
+run_name: hilarious-snake-726
+run_uuid: b859c4bff0844dafbe4e07e462dfdc13
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716802879094
+status: 3
+tags: []
+user_id: user
