@@ -1,1 +1,8 @@
-.mlops
+.mlops_env
+*.tf
+mlops/mlops/.file_versions/*
+mlops/mlops/runs/
+mlops/runs/*
+mlruns
+*.pyc
+mlops/terraform

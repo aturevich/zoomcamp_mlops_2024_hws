@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mlflow:
+    build:
+      context: ./hw3_docker
+      dockerfile: mlflow.dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./hw3_docker/mlflow:/home/mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+
+  hw3_script:
+    build:
+      context: ./hw3_docker
+      dockerfile: Dockerfile.hw3
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000

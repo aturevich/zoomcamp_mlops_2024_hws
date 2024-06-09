@@ -1,0 +1,109 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_03/global_data_products/train_set.py
+    global_data_product:
+      outdated_after:
+        seconds: 600
+      uuid: train_set
+  downstream_blocks:
+  - hyperparams_tuning_sklearn
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: train_set
+  retry_config: {}
+  status: executed
+  timeout: null
+  type: global_data_product
+  upstream_blocks: []
+  uuid: train_set
+- all_upstream_blocks_executed: true
+  color: teal
+  configuration:
+    dynamic: true
+    file_source:
+      path: homework_03/custom/load_models.py
+  downstream_blocks:
+  - hyperparams_tuning_sklearn
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_models
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks: []
+  uuid: load_models
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: homework_03/transformers/hyperparams_tuning_sklearn.py
+    file_source:
+      path: homework_03/transformers/hyperparams_tuning_sklearn.py
+    reduce_output: true
+  downstream_blocks:
+  - sklearn
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: hyperparams_tuning_sklearn
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - train_set
+  - load_models
+  uuid: hyperparams_tuning_sklearn
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework_03/data_exporters/sklearn.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: sklearn
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - hyperparams_tuning_sklearn
+  uuid: sklearn
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-06-08 18:45:33.630097+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: sklearn_train
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: sklearn_train
+variables:
+  max_evaluations: 50
+  random_state: 7
+variables_dir: /home/src/mage_data/homework_03
+widgets: []
